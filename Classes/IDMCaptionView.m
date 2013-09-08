@@ -14,8 +14,6 @@ static const CGFloat labelPadding = 10;
 
 // Private
 @interface IDMCaptionView () {
-    id<IDMPhoto> _photo;
-    UILabel *_label;    
 }
 @end
 

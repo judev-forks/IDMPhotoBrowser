@@ -30,4 +30,7 @@
 // the full width of the screen
 - (CGSize)sizeThatFits:(CGSize)size;
 
+@property (nonatomic,retain) id<IDMPhoto> photo;
+@property (nonatomic,retain) UILabel *label;
+
 @end
