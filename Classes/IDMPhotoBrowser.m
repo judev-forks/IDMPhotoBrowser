@@ -1097,7 +1097,7 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
     [self cancelControlHiding];
 	
 	// Status bar and nav bar positioning
-    if (self.wantsFullScreenLayout) {
+    if (self.wantsFullScreenLayout && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         // Status Bar
         if ([UIApplication instancesRespondToSelector:@selector(setStatusBarHidden:withAnimation:)]) {
             [[UIApplication sharedApplication] setStatusBarHidden:hidden
@@ -1171,7 +1171,9 @@ static inline double radians (double degrees) {return degrees * M_PI/180;}
 
 - (void)doneButtonPressed:(id)sender {
     // Status Bar
-    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+    if (self.wantsFullScreenLayout && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationFade];
+    }
     
     // Gesture
     [[[[UIApplication sharedApplication] delegate] window] removeGestureRecognizer:_panGesture];
