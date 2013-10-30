@@ -69,4 +69,7 @@
 // Get IDMPhoto at index
 - (id<IDMPhoto>)photoAtIndex:(NSUInteger)index;
 
+- (void)toggleControls;
+- (BOOL)areControlsHidden;
+
 @end

@@ -109,8 +109,6 @@
 - (void)cancelControlHiding;
 - (void)hideControlsAfterDelay;
 - (void)setControlsHidden:(BOOL)hidden animated:(BOOL)animated permanent:(BOOL)permanent;
-- (void)toggleControls;
-- (BOOL)areControlsHidden;
 
 // Data
 - (NSUInteger)numberOfPhotos;
@@ -288,8 +286,8 @@
             [UIView beginAnimations:nil context:NULL];
             [UIView setAnimationDuration:animationDuration];
             [UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
-            [UIView setAnimationDelegate:self];
-            [UIView setAnimationDidStopSelector:@selector(animationDidFinish)];
+//            [UIView setAnimationDelegate:self];
+//            [UIView setAnimationDidStopSelector:@selector(animationDidFinish)];
             [scrollView setCenter:CGPointMake(finalX, finalY)];
             self.view.backgroundColor = [UIColor colorWithWhite:0 alpha:0];
             //self.view.backgroundColor = [UIColor colorWithPatternImage:[self getImageFromView:backgroundImageView]];
@@ -312,8 +310,8 @@
             [UIView beginAnimations:nil context:NULL];
             [UIView setAnimationDuration:animationDuration];
             [UIView setAnimationCurve:UIViewAnimationCurveEaseOut];
-            [UIView setAnimationDelegate:self];
-            [UIView setAnimationDidStopSelector:@selector(animationDidFinish)];
+//            [UIView setAnimationDelegate:self];
+//            [UIView setAnimationDidStopSelector:@selector(animationDidFinish)];
             [scrollView setCenter:CGPointMake(finalX, finalY)];
             [UIView commitAnimations];
         }
